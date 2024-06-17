@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+body {
+  font-family: 'Neuton', serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Fredoka One', cursive;
+  color: #000000;
+  margin: 20px 0;
+  text-align: center;
+}
+
+form, #detalhesContainer, #conteudo {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  width: 100%;
+  margin: 20px;
+  border: 2px solid #000000;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #000000;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #333333;
+}
+
+.desktop-filters button, .mobile-select {
+  width: auto;
+  padding: 10px 15px;
+  margin: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #000000;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.desktop-filters button:hover, .mobile-select:hover {
+  background-color: #333333;
+}
+
+#conteudo {
+  display: grid;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.filters-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  #conteudo {
+    grid-template-columns: 1fr;
+  }
+
+  .desktop-filters {
+    display: none;
+  }
+
+  .mobile-select {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  #conteudo {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .desktop-filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .mobile-select {
+    display: none;
+  }
+}
+
+@media (min-width: 1025px) {
+  #conteudo {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .desktop-filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .mobile-select {
+    display: none;
+  }
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas: 
+    "a1 a2"
+    "a1 a3"
+    "a4 a4"
+    "a5 a5";
+  padding: 20px;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  grid-area: a1;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  border: 2px solid #000000;
+  padding: 5px;
+  background-color: #fff;
+}
+
+.card p {
+  margin: 10px 0;
+  color: #333;
+}
+
+.card .posicao {
+  grid-area: a2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #000000;
+}
+
+.card .nome {
+  grid-area: a3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.card .descricao {
+  grid-area: a4;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #666;
+}
+
+.card .nascimento {
+  grid-area: a5;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  #detalhesContainer, .card {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .card {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "a1"
+      "a2"
+      "a3"
+      "a4"
+      "a5";
+  }
+
+  .card img {
+    width: 80px;
+    height: 80px;
+  }
+}
